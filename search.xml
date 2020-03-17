@@ -8,7 +8,7 @@
       <link href="/2020/03/17/yong-winscp-jiang-ben-di-wen-jian-shang-chuan-zhi-yuan-cheng-fu-wu-qi/"/>
       <url>/2020/03/17/yong-winscp-jiang-ben-di-wen-jian-shang-chuan-zhi-yuan-cheng-fu-wu-qi/</url>
       
-        <content type="html"><![CDATA[<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p><a href="https://winscp.net/eng/download.php" target="_blank" rel="noopener">下载地址</a></p><p>安装完成后出现如下界面：<br><img src="https://raw.githubusercontent.com/iAyoD/blogpic/master/img/winscp1.png" alt="img"></p><p>文件协议选择SFTP；主机名为服务器的外网IP. 然后输入服务器的系统用户名和密码即可登录。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p><a href="https://winscp.net/eng/download.php" target="_blank" rel="noopener">下载地址</a></p><p>安装完成后出现如下界面：<br><img src="https://raw.githubusercontent.com/iAyoD/blogpic/master/img/winscp1.png" alt="img"></p><p>文件协议选择SFTP；主机名为服务器的外网IP. 然后输入服务器的系统用户名和密码即可登录。</p>]]></content>
       
       
       <categories>
