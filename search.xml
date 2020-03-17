@@ -5,10 +5,10 @@
     
     <entry>
       <title>hexo s后出现cannot get/的错误</title>
-      <link href="/2020/03/17/di-yi-pian/"/>
-      <url>/2020/03/17/di-yi-pian/</url>
+      <link href="/2020/03/17/hexo-s-hou-chu-xian-cannot-get-de-cuo-wu/"/>
+      <url>/2020/03/17/hexo-s-hou-chu-xian-cannot-get-de-cuo-wu/</url>
       
-        <content type="html"><![CDATA[<p>  如果_post文件夹下没有.md文件就会出现这种错误，所以才有了这篇文章.</p>]]></content>
+        <content type="html"><![CDATA[<p>如果_post文件夹下没有.md文件就会出现这种错误。</p><p>如果是其他问题导致可以尝试npm install.</p><p>或者进行以下步骤</p><ol><li>hexo init <folder></li><li>cd folder</li><li>npm install</li><li>npm install hexo-server –save</li><li>npm s</li></ol>]]></content>
       
       
       
