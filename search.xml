@@ -4,13 +4,19 @@
   
     
     <entry>
-      <title>第一篇</title>
+      <title>hexo s后出现cannot get/的错误</title>
       <link href="/2020/03/17/di-yi-pian/"/>
       <url>/2020/03/17/di-yi-pian/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>  如果_post文件夹下没有.md文件就会出现这种错误，所以才有了这篇文章.</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> error </tag>
+            
+        </tags>
       
     </entry>
     
