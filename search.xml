@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>中国大陆购买Xbox Game Pass的方法</title>
+      <link href="/2020/03/24/zhong-guo-da-lu-gou-mai-xbox-game-pass-de-fang-fa/"/>
+      <url>/2020/03/24/zhong-guo-da-lu-gou-mai-xbox-game-pass-de-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在网页订阅（需要梯子）"><a href="#在网页订阅（需要梯子）" class="headerlink" title="在网页订阅（需要梯子）"></a>在网页订阅（需要梯子）</h2><ol><li><a href="https://www.icats.cc/" target="_blank" rel="noopener">梯子</a></li><li>更改酸酸乳的配置<br> 右键小飞机图标<br> <img src="https://raw.githubusercontent.com/iAyoD/blogpic/master/img/pic1.png" alt="img1"><br> 代理规则选择全局<br> <img src="https://raw.githubusercontent.com/iAyoD/blogpic/master/img/20200324182641.png" alt="img2"><br> 系统代理模式选择全局</li><li>进入<a href="https://www.xbox.com/zh-HK/xbox-game-pass/pc-games?xr=shellnav" target="_blank" rel="noopener">官网</a></li><li>点击右上角<strong>开始使用</strong>下载客户端</li><li>进入<a href="https://www.xbox.com/zh-hk/xbox-game-pass/#join" target="_blank" rel="noopener">购买页面</a>购买</li><li>支持支付宝连续包月付款，不支持花呗。支付完成后就可以进入客户端下载XGP提供的游戏了</li></ol><h2 id="在客户端订阅"><a href="#在客户端订阅" class="headerlink" title="在客户端订阅"></a>在客户端订阅</h2><ol><li>进入<a href="https://www.xbox.com/zh-hk/" target="_blank" rel="noopener">香港xbox官网</a></li><li>点击xbox game pass for pc<br> <img src="https://raw.githubusercontent.com/iAyoD/blogpic/master/img/20200324183539.png" alt="img3"><br> 点击右上角<strong>开始使用</strong>下载客户端</li><li>更改自己的微软账户地址；进入<a href="https://www.microsoft.com/zh-CN/" target="_blank" rel="noopener">微软官网</a></li><li>右上角进入<strong>我的Microsoft账户</strong>，点击<strong>更多操作</strong>–&gt;<strong>编辑个人资料</strong>–&gt;<strong>编辑国家/地区</strong>改为<strong>香港特别行政区</strong></li><li>进入客户端并进入<strong>settings</strong><img src="https://raw.githubusercontent.com/iAyoD/blogpic/master/img/20200324185440.png" alt="img4"></li><li>进入<strong>Subscriptions</strong>下的选项，之后选择<strong>Xbox Game Pass for PC(Beta)</strong>进入支付页面，支持支付宝，不支持花呗（这里不知道为什么一直显示我的账户在United States）</li></ol><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>凡是微软发行的游戏会一直在XGP上，其他游戏在一个月内可以玩但是一个月之后就不一定了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> gaming </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Xbox </tag>
+            
+            <tag> 游戏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>递归实现进制转换（C语言描述）</title>
+      <link href="/2020/03/24/di-gui-shi-xian-jin-zhi-zhuan-huan-c-yu-yan-miao-shu/"/>
+      <url>/2020/03/24/di-gui-shi-xian-jin-zhi-zhuan-huan-c-yu-yan-miao-shu/</url>
+      
+        <content type="html"><![CDATA[<pre><code>#include&lt;stdio.h&gt;void print(int x, int n){    if(x%n&lt;10){        printf(&quot;%d&quot;, x%n);    }else{        printf(&quot;%c&quot;, x-10+&#39;a&#39;);    }}void jzzh(int x, int n){    if(x){        jzzh(x/n, n);        print(x, n);    }}int main(){    int x, n;    scanf(&quot;%d %d&quot;, &amp;x, &amp;n);    jzzh(x, n);    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用WinSCP将本地文件上传至远程服务器</title>
       <link href="/2020/03/17/yong-winscp-jiang-ben-di-wen-jian-shang-chuan-zhi-yuan-cheng-fu-wu-qi/"/>
       <url>/2020/03/17/yong-winscp-jiang-ben-di-wen-jian-shang-chuan-zhi-yuan-cheng-fu-wu-qi/</url>
