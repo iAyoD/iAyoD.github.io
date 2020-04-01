@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>C程序设计语言读书笔记1</title>
+      <link href="/2020/04/01/c-cheng-xu-she-ji-yu-yan-du-shu-bi-ji-1/"/>
+      <url>/2020/04/01/c-cheng-xu-she-ji-yu-yan-du-shu-bi-ji-1/</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><h1 id="练习-1-8"><a href="#练习-1-8" class="headerlink" title="练习 1-8"></a>练习 1-8</h1><h2 id="编写一个统计空格、制表符与换行符个数的程序"><a href="#编写一个统计空格、制表符与换行符个数的程序" class="headerlink" title="编写一个统计空格、制表符与换行符个数的程序"></a>编写一个统计空格、制表符与换行符个数的程序</h2><pre><code>#include&lt;stdio.h&gt;int main(){    int cnts=0, cntt=0, cntn=0;char c; //声明变量    while((c=getchar())!=EOF){            //输入字符，输入为EOF时退出循环        if(c==&#39; &#39;){                    //检测空格            cnts++;        }else if(c==&#39;\t&#39;){             //检测制表符            cntt++;        }else if(c==&#39;\n&#39;){             //检测换行符            cntn++;        }    }    printf(&quot;%d %d %d&quot;, cnts, cntt, cntn);    return 0;} </code></pre><h1 id="练习1-9"><a href="#练习1-9" class="headerlink" title="练习1-9"></a>练习1-9</h1><h2 id="编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替"><a href="#编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替" class="headerlink" title="编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替"></a>编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替</h2><pre><code>#include&lt;stdio.h&gt;int main(){    char c;int flag=1;    while((c=getchar())!=EOF){        if(c==&#39; &#39;){            if(flag){         //当空格第一次出现输出空格，否则不输出                putchar(c);                flag = 0;            }        }else{            putchar(c);            flag = 1;         //将空格的状态初始化        }    }    return 0;} </code></pre><h1 id="练习1-10"><a href="#练习1-10" class="headerlink" title="练习1-10"></a>练习1-10</h1><h2 id="编写一个将输入复制到输出的程序，并将其中的制表符替换为-t，把回退符替换为-b，把反斜杠替换为"><a href="#编写一个将输入复制到输出的程序，并将其中的制表符替换为-t，把回退符替换为-b，把反斜杠替换为" class="headerlink" title="编写一个将输入复制到输出的程序，并将其中的制表符替换为\t，把回退符替换为\b，把反斜杠替换为\"></a>编写一个将输入复制到输出的程序，并将其中的制表符替换为\t，把回退符替换为\b，把反斜杠替换为\</h2><pre><code>#include&lt;stdio.h&gt;int main(){    char c;    while((c=getchar())!=EOF){        if(c==&#39;\t&#39;){            putchar(&#39;\\&#39;);     //输出&#39;\&#39;            putchar(&#39;t&#39;);      //输出&#39;t&#39; 下面同理        }else if(c==&#39;\b&#39;){            putchar(&#39;\\&#39;);            putchar(&#39;b&#39;);        }else if(c==&#39;\\&#39;){            putchar(&#39;\\&#39;);            putchar(&#39;\\&#39;);        }else{            putchar(c);        }    }    return 0;} </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> K&amp;R </tag>
+            
+            <tag> 练习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>中国大陆购买Xbox Game Pass的方法</title>
       <link href="/2020/03/24/zhong-guo-da-lu-gou-mai-xbox-game-pass-de-fang-fa/"/>
       <url>/2020/03/24/zhong-guo-da-lu-gou-mai-xbox-game-pass-de-fang-fa/</url>
