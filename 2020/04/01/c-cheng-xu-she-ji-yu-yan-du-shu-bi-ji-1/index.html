@@ -30,7 +30,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
     <script data-ad-client="ca-pub-6083465187932809" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -417,61 +418,64 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>[toc]</p>
-<h1 id="练习-1-8"><a href="#练习-1-8" class="headerlink" title="练习 1-8"></a>练习 1-8</h1><h2 id="编写一个统计空格、制表符与换行符个数的程序"><a href="#编写一个统计空格、制表符与换行符个数的程序" class="headerlink" title="编写一个统计空格、制表符与换行符个数的程序"></a>编写一个统计空格、制表符与换行符个数的程序</h2><pre><code>#include&lt;stdio.h&gt;
+<h1 id="练习-1-8"><a href="#练习-1-8" class="headerlink" title="练习 1-8"></a>练习 1-8</h1><h2 id="编写一个统计空格、制表符与换行符个数的程序"><a href="#编写一个统计空格、制表符与换行符个数的程序" class="headerlink" title="编写一个统计空格、制表符与换行符个数的程序"></a>编写一个统计空格、制表符与换行符个数的程序</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    int cnts=0, cntt=0, cntn=0;char c; //声明变量
-    while((c=getchar())!=EOF){            //输入字符，输入为EOF时退出循环
-        if(c==&#39; &#39;){                    //检测空格
-            cnts++;
-        }else if(c==&#39;\t&#39;){             //检测制表符
-            cntt++;
-        }else if(c==&#39;\n&#39;){             //检测换行符
-            cntn++;
-        }
-    }
-    printf(&quot;%d %d %d&quot;, cnts, cntt, cntn);
-    return 0;
-} 
-</code></pre><h1 id="练习1-9"><a href="#练习1-9" class="headerlink" title="练习1-9"></a>练习1-9</h1><h2 id="编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替"><a href="#编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替" class="headerlink" title="编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替"></a>编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替</h2><pre><code>#include&lt;stdio.h&gt;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> cnts<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> cntt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> cntn<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token keyword">char</span> c<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//声明变量</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">{</span>            <span class="token comment" spellcheck="true">//输入字符，输入为EOF时退出循环</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">{</span>                    <span class="token comment" spellcheck="true">//检测空格</span>
+            cnts<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\t'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             <span class="token comment" spellcheck="true">//检测制表符</span>
+            cntt<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             <span class="token comment" spellcheck="true">//检测换行符</span>
+            cntn<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d"</span><span class="token punctuation">,</span> cnts<span class="token punctuation">,</span> cntt<span class="token punctuation">,</span> cntn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="练习1-9"><a href="#练习1-9" class="headerlink" title="练习1-9"></a>练习1-9</h1><h2 id="编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替"><a href="#编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替" class="headerlink" title="编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替"></a>编写一个将输入复制到输出的程序，并将其中连续的多个空格用一个空格代替</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    char c;int flag=1;
-    while((c=getchar())!=EOF){
-        if(c==&#39; &#39;){
-            if(flag){         //当空格第一次出现输出空格，否则不输出
-                putchar(c);
-                flag = 0;
-            }
-        }else{
-            putchar(c);
-            flag = 1;         //将空格的状态初始化
-        }
-    }
-    return 0;
-} </code></pre><h1 id="练习1-10"><a href="#练习1-10" class="headerlink" title="练习1-10"></a>练习1-10</h1><h2 id="编写一个将输入复制到输出的程序，并将其中的制表符替换为-t，把回退符替换为-b，把反斜杠替换为"><a href="#编写一个将输入复制到输出的程序，并将其中的制表符替换为-t，把回退符替换为-b，把反斜杠替换为" class="headerlink" title="编写一个将输入复制到输出的程序，并将其中的制表符替换为\t，把回退符替换为\b，把反斜杠替换为\"></a>编写一个将输入复制到输出的程序，并将其中的制表符替换为\t，把回退符替换为\b，把反斜杠替换为\</h2><pre><code>#include&lt;stdio.h&gt;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> c<span class="token punctuation">;</span><span class="token keyword">int</span> flag<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>         <span class="token comment" spellcheck="true">//当空格第一次出现输出空格，否则不输出</span>
+                <span class="token function">putchar</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//将空格的状态初始化</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="练习1-10"><a href="#练习1-10" class="headerlink" title="练习1-10"></a>练习1-10</h1><h2 id="编写一个将输入复制到输出的程序，并将其中的制表符替换为-t，把回退符替换为-b，把反斜杠替换为"><a href="#编写一个将输入复制到输出的程序，并将其中的制表符替换为-t，把回退符替换为-b，把反斜杠替换为" class="headerlink" title="编写一个将输入复制到输出的程序，并将其中的制表符替换为\t，把回退符替换为\b，把反斜杠替换为\"></a>编写一个将输入复制到输出的程序，并将其中的制表符替换为\t，把回退符替换为\b，把反斜杠替换为\</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    char c;
-    while((c=getchar())!=EOF){
-        if(c==&#39;\t&#39;){
-            putchar(&#39;\\&#39;);     //输出&#39;\&#39;
-            putchar(&#39;t&#39;);      //输出&#39;t&#39; 下面同理
-        }else if(c==&#39;\b&#39;){
-            putchar(&#39;\\&#39;);
-            putchar(&#39;b&#39;);
-        }else if(c==&#39;\\&#39;){
-            putchar(&#39;\\&#39;);
-            putchar(&#39;\\&#39;);
-        }else{
-            putchar(c);
-        }
-    }
-    return 0;
-} </code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> c<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\t'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//输出'\'</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//输出't' 下面同理</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\b'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\\'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            <span class="token function">putchar</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr/>
 
@@ -990,12 +994,12 @@ int main()
                     <div class="summary block-with-text">
                         
                             [toc]
-练习 1-8编写一个统计空格、制表符与换行符个数的程序#include&lt;stdio.h&gt;
+练习 1-8编写一个统计空格、制表符与换行符个数的程序#include&lt;stdio.h>
 
 int main()
 {
     int cnts=0, cntt=0, cntn=0;char c; //声明变量
-   
+    wh
                         
                     </div>
                     <div class="publish-info">
