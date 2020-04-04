@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>C程序设计语言读书笔记2</title>
+      <link href="/2020/04/04/c-cheng-xu-she-ji-yu-yan-du-shu-bi-ji-2/"/>
+      <url>/2020/04/04/c-cheng-xu-she-ji-yu-yan-du-shu-bi-ji-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="练习1-12"><a href="#练习1-12" class="headerlink" title="练习1-12"></a>练习1-12</h2><p>编写一个程序，以每行一个单词的形式打印其输出</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token macro property">#<span class="token directive keyword">define</span> IN 1</span><span class="token macro property">#<span class="token directive keyword">define</span> OUT 0</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> state<span class="token punctuation">,</span> c<span class="token punctuation">;</span>    state <span class="token operator">=</span> OUT<span class="token punctuation">;</span>    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>c<span class="token operator">>=</span><span class="token number">65</span><span class="token operator">&amp;&amp;</span>c<span class="token operator">&lt;=</span><span class="token number">90</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token punctuation">(</span>c<span class="token operator">>=</span><span class="token number">97</span><span class="token operator">&amp;&amp;</span>c<span class="token operator">&lt;=</span><span class="token number">122</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>            state <span class="token operator">=</span> IN<span class="token punctuation">;</span>            <span class="token function">putchar</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token operator">==</span>IN<span class="token punctuation">)</span><span class="token punctuation">{</span>            <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            state <span class="token operator">=</span> OUT<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> K&amp;R </tag>
+            
+            <tag> 练习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++ Primer1.6节练习</title>
       <link href="/2020/04/02/c-primer1.6-jie-lian-xi/"/>
       <url>/2020/04/02/c-primer1.6-jie-lian-xi/</url>
