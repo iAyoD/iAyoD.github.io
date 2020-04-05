@@ -258,25 +258,25 @@
         top: 48%;
         left: 8px;
     }
-
+    
     #next-cover {
         position: absolute;
         top: 48%;
         right: 8px;;
     }
-
+    
     #prev-cover i {
         margin-right: 3px;
     }
-
+    
     #next-cover i {
         margin-left: 3px;
     }
-
+    
     .carousel-control:hover {
         background-color: rgba(0, 0, 0, .4);
     }
-
+    
     .carousel-control i {
         color: #fff;
         font-size: 2.4rem;
@@ -288,7 +288,7 @@
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
 
-    <div class="carousel-item red white-text bg-cover about-cover">
+    <div class="carousel-item white-text bg-cover about-cover">
         <div class="container">
             <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -305,7 +305,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
+                        strings: ['一切都是命运石之门的选择','El psy congroo'],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
@@ -326,12 +326,12 @@
 </script>
 
 
-
+    
             <div class="cover-btns">
                 <a href="#indexCard" class="waves-effect waves-light btn">
                     <i class="fa fa-angle-double-down"></i>开始阅读
                 </a>
-
+    
                 
                     <a href="https://github.com/iAyoD" class="waves-effect waves-light btn" target="_blank">
                         <i class="fab fa-github-alt"></i>Github
@@ -372,7 +372,7 @@
 </div>
         </div>
     </div>
-
+    
     
 </div>
 
@@ -383,7 +383,7 @@
 
         //用户触摸轮播自动 restartPlay 是否生效
         let initUserPressedOrDraggedActive = false
-
+    
         //用户触摸轮播自动 restartPlay
         function initUserPressedOrDragged(instance) {
             setInterval(() => {
@@ -393,7 +393,7 @@
                 }
             }, 1000)
         }
-
+    
         coverSlider.carousel({
             duration: Number('120'),
             fullWidth: true,
@@ -406,7 +406,7 @@
                 }
             },
         })
-
+    
         let carouselIntervalId;
         
         // Loop to call the next cover article picture.
@@ -417,14 +417,14 @@
         };
         autoCarousel();
         
-
+    
         function restartPlay() {
             
             clearInterval(carouselIntervalId);
             autoCarousel();
             
         };
-
+    
         
         // prev and next cover post.
         $('#prev-cover').click(function () {
