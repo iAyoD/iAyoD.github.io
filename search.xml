@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>C++ Primer 11.2.1节编程练习</title>
+      <link href="/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/"/>
+      <url>/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="练习11-7-定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子"><a href="#练习11-7-定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子" class="headerlink" title="练习11.7 定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子"></a>练习11.7 定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>#include<algorithm>#include<vector>#include<string>#include<list>#include<numeric>#include<functional>#include<iterator>#include<fstream>#include<map>#include<set>#include<cctype>using namespace std;int main(){    map<string, vector<string>> family;    cout << "New family or new child? f/c" << endl;    string option, family_name;    while(cin >> option){        if(option=="f"){            cout << "Please enter family name:" << endl;            cin >> family_name;            family[family_name];        }else if(option=="c"){            cout << "Which family?" << endl;            cin >> family_name;            string child_name;            cout << "Please enter child's name:" << endl;            cin >> child_name;            family[family_name].push_back(child_name);        }else{            cerr << "Please enter correct option!" << endl;        }        cout << "New family or new child? f/c" << endl;    }    for(auto i=family.begin();i!=family.end();++i){        cout << (*i).first << " ";        for(auto j=(*i).second.begin();j!=(*i).second.end();++j){            cout << *j << " ";        }        cout << endl;    }    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="编写一个程序，在一个vector而不是一个set中保存不重复的单词"><a href="#编写一个程序，在一个vector而不是一个set中保存不重复的单词" class="headerlink" title="编写一个程序，在一个vector而不是一个set中保存不重复的单词"></a>编写一个程序，在一个vector而不是一个set中保存不重复的单词</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>#include<algorithm>#include<vector>#include<string>#include<list>#include<numeric>#include<functional>#include<iterator>#include<fstream>#include<map>#include<set>#include<cctype>using namespace std;int main(){    vector<string> words;    string word;    while(cin >> word){        if(find(words.begin(), words.end(), word)!=words.end()){            continue;        }else{            words.push_back(word);        }    }    for_each(words.begin(), words.end(), [](string i){cout << i << " ";});    cout << endl;    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 练习 </tag>
+            
+            <tag> C++ </tag>
+            
+            <tag> C++ Primer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML速查列表</title>
       <link href="/2020/04/29/html-su-cha-lie-biao/"/>
       <url>/2020/04/29/html-su-cha-lie-biao/</url>
