@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>C++ Primer 11.2.3节编程练习</title>
+      <link href="/2020/07/22/2020-7-22-c-primer-11.2.3-jie-bian-cheng-lian-xi/"/>
+      <url>/2020/07/22/2020-7-22-c-primer-11.2.3-jie-bian-cheng-lian-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中"><a href="#编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中" class="headerlink" title="编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中"></a>编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>#include<algorithm>#include<vector>#include<string>#include<list>#include<numeric>#include<functional>#include<iterator>#include<fstream>#include<map>#include<set>#include<cctype>#include<utility>using namespace std;int main(){    pair<string, int> sipair;    vector<pair<string, int>> sipvector;    string str;    int num;    while(cin >> str >> num){        sipair.first = str;        sipair.second = num;        sipvector.push_back(sipair);    }    for(auto i: sipvector){        cout << i.first << " " << i.second;        cout << endl;    }    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair"><a href="#在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair" class="headerlink" title="在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair"></a>在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>#include<algorithm>#include<vector>#include<string>#include<list>#include<numeric>#include<functional>#include<iterator>#include<fstream>#include<map>#include<set>#include<cctype>#include<utility>using namespace std;using namespace placeholders;int main(){    pair<string, int> sipair;    vector<pair<string, int>> sipvector;    string str;    int num;    while(cin >> str >> num){        //pair<string, int> sipair(str, num); 第一种        //pair<string, int> sipair = {str, num}; 第二种        //sipair = make_pair(str, num); 第三种        sipair.first = str;        sipair.second = num;        sipvector.push_back(sipair);    }    for(auto i: sipvector){        cout << i.first << " " << i.second;        cout << endl;    }    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="扩展你在11-2-1节练习中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日"><a href="#扩展你在11-2-1节练习中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日" class="headerlink" title="扩展你在11.2.1节练习中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日"></a>扩展你在<a href="http://labjh.xyz/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/" target="_blank" rel="noopener">11.2.1节练习</a>中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>#include<algorithm>#include<vector>#include<string>#include<list>#include<numeric>#include<functional>#include<iterator>#include<fstream>#include<map>#include<set>#include<cctype>using namespace std;int main(){    map<string, vector<string>> family;    vector<pair<string, string>> name_birthday;    pair<string, string> nb;    cout << "New family or new child? f/c" << endl;    string option, family_name, birthday;    while(cin >> option){        if(option=="f"){            cout << "Please enter family name:" << endl;            cin >> family_name;            family[family_name];        }else if(option=="c"){            cout << "Which family?" << endl;            cin >> family_name;            string child_name;            cout << "Please enter child's name:" << endl;            cin >> child_name;            family[family_name].push_back(child_name);            nb.first = child_name;            cout << "Please enter child's birthday:" << endl;            cin >> birthday;            nb.second = birthday;            name_birthday.push_back(nb);        }else{            cerr << "Please enter correct option!" << endl;        }        cout << "New family or new child? f/c" << endl;    }    for(auto i=family.begin();i!=family.end();++i){        cout << (*i).first << " Family members: ";        for(auto j=(*i).second.begin();j!=(*i).second.end();++j){            cout << *j << " ";        }        cout << endl;    }    for(auto i: name_birthday){        cout << i.first << "'s birthday is: " << i.second << endl;    }    cout << endl;    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 练习 </tag>
+            
+            <tag> C++ </tag>
+            
+            <tag> C++ Primer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++ Primer 11.2.1节编程练习</title>
       <link href="/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/"/>
       <url>/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/</url>

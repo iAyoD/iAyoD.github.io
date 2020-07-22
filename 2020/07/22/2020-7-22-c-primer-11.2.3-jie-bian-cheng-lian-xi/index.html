@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++ Primer 11.2.1节编程练习, 大众澡堂">
+    <meta name="keywords" content="C++ Primer 11.2.3节编程练习, 大众澡堂">
     <meta name="description" content="一起搓澡">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++ Primer 11.2.1节编程练习 | 大众澡堂</title>
+    <title>C++ Primer 11.2.3节编程练习 | 大众澡堂</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++ Primer 11.2.1节编程练习</h1>
+                    <h1 class="description center-align post-title">C++ Primer 11.2.3节编程练习</h1>
                 </div>
             </div>
         </div>
@@ -417,7 +417,77 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="练习11-7-定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子"><a href="#练习11-7-定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子" class="headerlink" title="练习11.7 定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子"></a>练习11.7 定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+                <h2 id="编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中"><a href="#编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中" class="headerlink" title="编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中"></a>编写程序，读入string和int的序列，将每个string和int存入一个pair中，pair保存在一个vector中</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<string>
+#include<list>
+#include<numeric>
+#include<functional>
+#include<iterator>
+#include<fstream>
+#include<map>
+#include<set>
+#include<cctype>
+#include<utility>
+
+using namespace std;
+
+int main()
+{
+    pair<string, int> sipair;
+    vector<pair<string, int>> sipvector;
+    string str;
+    int num;
+    while(cin >> str >> num){
+        sipair.first = str;
+        sipair.second = num;
+        sipvector.push_back(sipair);
+    }
+    for(auto i: sipvector){
+        cout << i.first << " " << i.second;
+        cout << endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair"><a href="#在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair" class="headerlink" title="在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair"></a>在上一题的程序中，至少有三种创建pair的方法，编写此程序的三个版本，分别采用不同的方法创建pair</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<string>
+#include<list>
+#include<numeric>
+#include<functional>
+#include<iterator>
+#include<fstream>
+#include<map>
+#include<set>
+#include<cctype>
+#include<utility>
+
+using namespace std;
+using namespace placeholders;
+
+int main()
+{
+    pair<string, int> sipair;
+    vector<pair<string, int>> sipvector;
+    string str;
+    int num;
+    while(cin >> str >> num){
+        //pair<string, int> sipair(str, num); 第一种
+        //pair<string, int> sipair = {str, num}; 第二种
+        //sipair = make_pair(str, num); 第三种
+        sipair.first = str;
+        sipair.second = num;
+        sipvector.push_back(sipair);
+    }
+    for(auto i: sipvector){
+        cout << i.first << " " << i.second;
+        cout << endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="扩展你在11-2-1节练习中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日"><a href="#扩展你在11-2-1节练习中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日" class="headerlink" title="扩展你在11.2.1节练习中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日"></a>扩展你在<a href="http://labjh.xyz/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/" target="_blank" rel="noopener">11.2.1节练习</a>中编写的孩子姓名的map，添加一个pair的vector，保存孩子的名和生日</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
 #include<algorithm>
 #include<vector>
 #include<string>
@@ -435,8 +505,10 @@ using namespace std;
 int main()
 {
     map<string, vector<string>> family;
+    vector<pair<string, string>> name_birthday;
+    pair<string, string> nb;
     cout << "New family or new child? f/c" << endl;
-    string option, family_name;
+    string option, family_name, birthday;
     while(cin >> option){
         if(option=="f"){
             cout << "Please enter family name:" << endl;
@@ -449,50 +521,29 @@ int main()
             cout << "Please enter child's name:" << endl;
             cin >> child_name;
             family[family_name].push_back(child_name);
+            nb.first = child_name;
+            cout << "Please enter child's birthday:" << endl;
+            cin >> birthday;
+            nb.second = birthday;
+            name_birthday.push_back(nb);
         }else{
             cerr << "Please enter correct option!" << endl;
         }
         cout << "New family or new child? f/c" << endl;
     }
     for(auto i=family.begin();i!=family.end();++i){
-        cout << (*i).first << " ";
+        cout << (*i).first << " Family members: ";
         for(auto j=(*i).second.begin();j!=(*i).second.end();++j){
             cout << *j << " ";
         }
         cout << endl;
     }
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="编写一个程序，在一个vector而不是一个set中保存不重复的单词"><a href="#编写一个程序，在一个vector而不是一个set中保存不重复的单词" class="headerlink" title="编写一个程序，在一个vector而不是一个set中保存不重复的单词"></a>编写一个程序，在一个vector而不是一个set中保存不重复的单词</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
-#include<algorithm>
-#include<vector>
-#include<string>
-#include<list>
-#include<numeric>
-#include<functional>
-#include<iterator>
-#include<fstream>
-#include<map>
-#include<set>
-#include<cctype>
-
-using namespace std;
-
-int main()
-{
-    vector<string> words;
-    string word;
-    while(cin >> word){
-        if(find(words.begin(), words.end(), word)!=words.end()){
-            continue;
-        }else{
-            words.push_back(word);
-        }
+    for(auto i: name_birthday){
+        cout << i.first << "'s birthday is: " << i.second << endl;
     }
-    for_each(words.begin(), words.end(), [](string i){cout << i << " ";});
     cout << endl;
     return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -518,7 +569,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://iAyoD.github.io/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/">http://iAyoD.github.io/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/</a>
+                    <a href="http://iAyoD.github.io/2020/07/22/2020-7-22-c-primer-11.2.3-jie-bian-cheng-lian-xi/">http://iAyoD.github.io/2020/07/22/2020-7-22-c-primer-11.2.3-jie-bian-cheng-lian-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -994,9 +1045,10 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/07/22/2020-7-22-c-primer-11.2.3-jie-bian-cheng-lian-xi/">
                     <div class="card-image">
@@ -1020,9 +1072,9 @@ int main()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1035,6 +1087,7 @@ int main()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1061,33 +1114,29 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/html-su-cha-lie-biao/">
+                <a href="/2020/07/22/c-primer-11.2.1-jie-bian-cheng-lian-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="HTML速查列表">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="C++ Primer 11.2.1节编程练习">
                         
-                        <span class="card-title">HTML速查列表</span>
+                        <span class="card-title">C++ Primer 11.2.1节编程练习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            转自菜鸟教程
-HTML基本文档&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-&lt;title>文档标题&lt;/title>
-&lt;/head>
-&lt;body>
-可见文本...
-&lt;/body>
-
+                            练习11.7 定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子（们）的名，编写代码，实现添加新的家庭以及向已有家庭中添加新的孩子#include
+#include
+#include
+#include
+#include
+#
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
                             </span>
                         <span class="publish-author">
                             
@@ -1104,8 +1153,16 @@ HTML基本文档&lt;!DOCTYPE html>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/%E7%BB%83%E4%B9%A0/">
+                        <span class="chip bg-color">练习</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/C-Primer/">
+                        <span class="chip bg-color">C++ Primer</span>
                     </a>
                     
                 </div>
